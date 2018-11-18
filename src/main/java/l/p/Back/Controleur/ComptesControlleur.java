@@ -49,6 +49,14 @@ public class ComptesControlleur {
         return true;
                 
     }
+     @RequestMapping(value = "/connect/{email}", method = RequestMethod.GET)
+    public boolean connect(@PathVariable String email) {
+         System.out.println(" email "+email);
+        compteRepository.findByEmail(email);
+        System.out.println(" email =========== "+email);
+        return true;
+                
+    }
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)
     public Comptes save(@RequestBody Comptes c) {
